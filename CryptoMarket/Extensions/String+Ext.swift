@@ -57,4 +57,10 @@ extension String {
         dateForm.dateFormat = "yyyy-MM-dd"
         return dateForm.string(from: Calendar.current.date(byAdding: .day, value: -1, to: Date()) ?? Date())
     }
+    
+    func formatAsDate() -> Date? {
+        let dateForm = DateFormatter()
+        dateForm.dateFormat = "yyyy-MM-dd"
+        return dateForm.date(from: self)
+    }
 }

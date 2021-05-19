@@ -14,7 +14,7 @@ internal class AddPortfolioViewModel: ViewModelType {
     
     private let disposeBag: DisposeBag = DisposeBag()
     private let onCryptoItemSelected: BehaviorSubject<(Market, Int)> = BehaviorSubject<(Market, Int)>(value: (Market(with: "Bitcoin", and: "BTC"), 0))
-    private let onMoneyItemSelected: BehaviorSubject<(MoneyModel, Int)> = BehaviorSubject<(MoneyModel, Int)>(value: (MoneyModel(name: .EURO, amount: 10, isSelected: true), 0))
+    private let onMoneyItemSelected: BehaviorSubject<(MoneyModel, Int)> = BehaviorSubject<(MoneyModel, Int)>(value: (MoneyModel(name: .USD, amount: 1.000, isSelected: true), 0))
     private let onCryptoCellTapEvent: PublishSubject<Int> = PublishSubject<Int>()
     private let onMoneyCellTapEvent: PublishSubject<Int> = PublishSubject<Int>()
     private let isFormValid: PublishSubject<Bool> = PublishSubject<Bool>()

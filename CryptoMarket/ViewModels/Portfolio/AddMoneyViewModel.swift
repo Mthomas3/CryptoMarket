@@ -53,8 +53,8 @@ internal class AddMoneyViewModel: ViewModelType {
     internal func generateMoney() -> [MoneyModel] {
         var money: [MoneyModel] = []
         
-        money.append(MoneyModel(name: MoneySelectedValue.USD, amount: 1000.0, isSelected: false))
-        money.append(MoneyModel(name: MoneySelectedValue.EURO, amount: 1000.0, isSelected: true))
+        money.append(MoneyModel(name: MoneySelectedValue.USD, amount: 1.000, isSelected: true))
+        //money.append(MoneyModel(name: MoneySelectedValue.EURO, amount: 1000.0, isSelected: true))
         
         return money
     }
