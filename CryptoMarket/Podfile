@@ -18,6 +18,10 @@ target 'CryptoMarket' do
    pod 'Comets'
    pod 'RAMAnimatedTabBarController'
    pod 'lottie-ios'
+   pod 'Firebase/Analytics'
+   pod 'Firebase/Crashlytics'
+   pod 'Firebase/Auth'
+   pod 'Firebase/Performance'
 
    plugin 'cocoapods-keys', {
    	  :project => "CryptoMarket",

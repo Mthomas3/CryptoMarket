@@ -49,7 +49,7 @@ public final class MarketNewsViewModel: ViewModelType {
             .map { $0.sorted { $0 == $1 }}
             .map {
                 $0.sorted {
-                    return ($0.publishedAt?.formatAsDate() ?? Date()) < ($1.publishedAt?.formatAsDate() ?? Date())
+                    return (($0.publishedAt?.formatAsDate() ?? Date()) < ($1.publishedAt?.formatAsDate() ?? Date()) && $0.urlToImage != $1.urlToImage)
                 }
             }
         

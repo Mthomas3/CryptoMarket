@@ -102,6 +102,7 @@
 		E9C29A9026395D72000CCE48 /* PortfolioEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C29A8F26395D72000CCE48 /* PortfolioEntity.swift */; };
 		E9D57025232A52AC009A5031 /* ApiRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D57024232A52AC009A5031 /* ApiRoute.swift */; };
 		E9D5702A232A6502009A5031 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D57029232A6502009A5031 /* String+Ext.swift */; };
+		E9E386E3266B86E600585750 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9E386E2266B86E600585750 /* GoogleService-Info.plist */; };
 		E9EFBDC9232BAAEA007EDE63 /* MarketEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EFBDC8232BAAEA007EDE63 /* MarketEntity.swift */; };
 		E9F35200263A13F10040981C /* AddPortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F351FF263A13F10040981C /* AddPortfolioViewController.swift */; };
 /* End PBXBuildFile section */
@@ -230,6 +231,7 @@
 		E9C29A8F26395D72000CCE48 /* PortfolioEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioEntity.swift; sourceTree = "<group>"; };
 		E9D57024232A52AC009A5031 /* ApiRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRoute.swift; sourceTree = "<group>"; };
 		E9D57029232A6502009A5031 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		E9E386E2266B86E600585750 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E9EFBDC8232BAAEA007EDE63 /* MarketEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketEntity.swift; sourceTree = "<group>"; };
 		E9F351FF263A13F10040981C /* AddPortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPortfolioViewController.swift; sourceTree = "<group>"; };
 		FF4D4DFE9881AC210D32E4A4 /* Pods-CryptoMarketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMarketTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoMarketTests/Pods-CryptoMarketTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 		1E51B01423219CC10087E38C /* CryptoMarket */ = {
 			isa = PBXGroup;
 			children = (
+				E9E386E2266B86E600585750 /* GoogleService-Info.plist */,
 				1E4A56AD232D2DC900B4BF0A /* Font */,
 				1E51B01C23219CC20087E38C /* Assets.xcassets */,
 				1E51B01E23219CC20087E38C /* LaunchScreen.storyboard */,
@@ -840,6 +843,7 @@
 			files = (
 				1E51B02023219CC20087E38C /* LaunchScreen.storyboard in Resources */,
 				E93AB6D3263FCE3D0080F8CD /* AddDateTableViewCell.xib in Resources */,
+				E9E386E3266B86E600585750 /* GoogleService-Info.plist in Resources */,
 				E96124CB26414D2A0033F0A7 /* MoneyTableViewCell.xib in Resources */,
 				1E51B01D23219CC20087E38C /* Assets.xcassets in Resources */,
 				1E51B01B23219CC10087E38C /* Main.storyboard in Resources */,
@@ -1211,7 +1215,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mthomas3.CryptoMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1232,7 +1236,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mthomas3.CryptoMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

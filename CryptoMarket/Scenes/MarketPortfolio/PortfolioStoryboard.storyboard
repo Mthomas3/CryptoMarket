@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uPR-y2-Cb9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uPR-y2-Cb9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,29 +17,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UBB-jA-1Ho">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6kB-5n-Uai">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" name="MainColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uKO-o1-dXY">
+                                <rect key="frame" x="67.5" y="324.5" width="279" height="247"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Portfolio" translatesAutoresizingMaskIntoConstraints="NO" id="hpr-18-fft">
+                                        <rect key="frame" x="39.5" y="25" width="200" height="84"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="84" id="ID7-HU-lgW"/>
+                                            <constraint firstAttribute="width" constant="200" id="iSW-iV-grX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No portfolio yet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXZ-eT-jiF">
+                                        <rect key="frame" x="56" y="127" width="167" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="KZp-mT-FN2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please click on the + to add a new portfolio to your watch list." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2p-8G-TtC">
+                                        <rect key="frame" x="43" y="167" width="193" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="193" id="XHd-Dn-EWr"/>
+                                            <constraint firstAttribute="height" constant="51" id="kEo-x3-7Aw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="NXZ-eT-jiF" firstAttribute="centerX" secondItem="uKO-o1-dXY" secondAttribute="centerX" id="4km-32-AVm"/>
+                                    <constraint firstAttribute="width" constant="279" id="VG2-lT-3il"/>
+                                    <constraint firstItem="hpr-18-fft" firstAttribute="centerX" secondItem="uKO-o1-dXY" secondAttribute="centerX" id="beV-HR-uWl"/>
+                                    <constraint firstItem="I2p-8G-TtC" firstAttribute="centerX" secondItem="uKO-o1-dXY" secondAttribute="centerX" id="cSo-qZ-QNF"/>
+                                    <constraint firstAttribute="height" constant="247" id="gkJ-BN-gig"/>
+                                    <constraint firstItem="NXZ-eT-jiF" firstAttribute="top" secondItem="hpr-18-fft" secondAttribute="bottom" constant="18" id="l1z-QB-2N5"/>
+                                    <constraint firstItem="I2p-8G-TtC" firstAttribute="top" secondItem="NXZ-eT-jiF" secondAttribute="bottom" id="o3C-78-Sib"/>
+                                    <constraint firstItem="hpr-18-fft" firstAttribute="top" secondItem="uKO-o1-dXY" secondAttribute="top" constant="25" id="qGQ-xg-8Ua"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XFA-XC-m8Q"/>
                         <color key="backgroundColor" name="MainColor"/>
                         <constraints>
-                            <constraint firstItem="UBB-jA-1Ho" firstAttribute="top" secondItem="vSH-1P-V5d" secondAttribute="top" id="2an-If-zFX"/>
-                            <constraint firstItem="UBB-jA-1Ho" firstAttribute="leading" secondItem="XFA-XC-m8Q" secondAttribute="leading" id="GmT-7T-exg"/>
-                            <constraint firstItem="XFA-XC-m8Q" firstAttribute="trailing" secondItem="UBB-jA-1Ho" secondAttribute="trailing" id="H3d-8u-svx"/>
-                            <constraint firstItem="XFA-XC-m8Q" firstAttribute="bottom" secondItem="UBB-jA-1Ho" secondAttribute="bottom" id="N66-BQ-Ur1"/>
+                            <constraint firstItem="6kB-5n-Uai" firstAttribute="leading" secondItem="XFA-XC-m8Q" secondAttribute="leading" id="D3F-6Q-IW3"/>
+                            <constraint firstItem="uKO-o1-dXY" firstAttribute="centerX" secondItem="vSH-1P-V5d" secondAttribute="centerX" id="Nsk-Qg-Gjo"/>
+                            <constraint firstItem="6kB-5n-Uai" firstAttribute="top" secondItem="vSH-1P-V5d" secondAttribute="top" id="avH-8G-Yx2"/>
+                            <constraint firstItem="uKO-o1-dXY" firstAttribute="centerY" secondItem="vSH-1P-V5d" secondAttribute="centerY" id="b3z-6k-sTK"/>
+                            <constraint firstAttribute="bottom" secondItem="6kB-5n-Uai" secondAttribute="bottom" id="hEr-2K-p6n"/>
+                            <constraint firstItem="XFA-XC-m8Q" firstAttribute="trailing" secondItem="6kB-5n-Uai" secondAttribute="trailing" id="xnf-dG-xRv"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="tableViewPortfolio" destination="UBB-jA-1Ho" id="AKb-Xu-k9m"/>
+                        <outlet property="emptyView" destination="uKO-o1-dXY" id="LQI-sb-k8J"/>
+                        <outlet property="tableViewPortfolio" destination="6kB-5n-Uai" id="Pjb-08-wgj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIx-Wo-wDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-133" y="-81"/>
+            <point key="canvasLocation" x="-133.33333333333334" y="-81.026785714285708"/>
         </scene>
         <!--test-->
         <scene sceneID="Lha-2C-ZxM">
@@ -174,6 +219,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Portfolio" width="866" height="612"/>
         <namedColor name="MainColor">
             <color red="0.10588235294117647" green="0.16470588235294117" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

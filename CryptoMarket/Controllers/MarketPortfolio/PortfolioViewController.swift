@@ -13,6 +13,7 @@ import RxCocoa
 class PortfolioViewController: UIViewController {
 
     @IBOutlet private weak var tableViewPortfolio: UITableView!
+    @IBOutlet private weak var emptyView: UIView!
     
     private let viewModel: PortfolioViewModel = PortfolioViewModel()
     private let onDelete: PublishSubject<PortfolioCore> = PublishSubject<PortfolioCore>()
@@ -43,8 +44,12 @@ class PortfolioViewController: UIViewController {
         let addButton = UIBarButtonItem(image: UIImage(named: "plus"), style: .plain, target: self, action: #selector(self.addPortfolio))
         addButton.tintColor = UIColor.init(named: "WhiteImage")
         self.navigationItem.rightBarButtonItem  = addButton
+        self.emptyView.layer.cornerRadius = 18
+        self.emptyView.backgroundColor = UIColor.init(named: "SoftWhite")?.withAlphaComponent(0.075)
+        self.emptyView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.addPortfolio)))
+        self.emptyView.isHidden = true
     }
-    
+
     private func setupTableView() {
         self.tableViewPortfolio.register(PortfolioTableViewCell.nib, forCellReuseIdentifier: PortfolioTableViewCell.identifier)
         self.tableViewPortfolio.delegate = self
@@ -58,6 +63,22 @@ class PortfolioViewController: UIViewController {
         if let vc = UIStoryboard(name: "PortfolioStoryboard", bundle: .main).instantiateViewController(withIdentifier: "AddPortfolioViewStoryboard") as? AddPortfolioViewController {
             vc.setup()
             self.present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
+        }
+    }
+    
+    private func updateBackgroundView() {
+        UIView.animate(withDuration: 0.5) {
+            if self.tableViewDataSource.count == 0 {
+                self.tableViewPortfolio.isHidden = true
+                self.emptyView.isHidden = false
+                self.tableViewPortfolio.alpha = 0.0
+                self.emptyView.alpha = 1.0
+            } else {
+                self.tableViewPortfolio.isHidden = false
+                self.emptyView.isHidden = true
+                self.tableViewPortfolio.alpha = 1.0
+                self.emptyView.alpha = 0.0
+            }
         }
     }
     
@@ -75,6 +96,7 @@ class PortfolioViewController: UIViewController {
                 self.tableViewDataSource = dataSource
                 self.refreshControl.endRefreshing()
                 self.tableViewPortfolio.reloadData()
+                self.updateBackgroundView()
             }, onError: { error in
                 print("AN ERROR OCCURED = \(error)")
             }).disposed(by: self.disposeBag)
@@ -82,9 +104,9 @@ class PortfolioViewController: UIViewController {
         output.portfolioOnChange.asObservable()
             .subscribeOn(MainScheduler.asyncInstance)
             .observeOn(MainScheduler.instance)
-            .subscribe { (element) in
+            .subscribe (onNext: { (element) in
                 self.tableView(new: element)
-            }.disposed(by: self.disposeBag)
+            }).disposed(by: self.disposeBag)
         
         output.isLoading.asObservable()
             .observeOn(MainScheduler.instance)
@@ -112,6 +134,7 @@ extension PortfolioViewController: UITableViewDelegate, UITableViewDataSource {
         self.tableViewPortfolio.beginUpdates()
         self.tableViewPortfolio.insertRows(at: [selectedIndexPath], with: .automatic)
         self.tableViewPortfolio.endUpdates()
+        self.updateBackgroundView()
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -127,6 +150,7 @@ extension PortfolioViewController: UITableViewDelegate, UITableViewDataSource {
         self.tableViewPortfolio.beginUpdates()
         self.tableViewPortfolio.deleteRows(at: [indexPath], with: .automatic)
         self.tableViewPortfolio.endUpdates()
+        self.updateBackgroundView()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

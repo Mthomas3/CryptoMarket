@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,20 +22,46 @@
                                 <color key="backgroundColor" name="MainColor"/>
                             </tableView>
                             <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5lJ-9h-Hln">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="729"/>
+                                <rect key="frame" x="48" y="282.66666666666669" width="279" height="247.00000000000006"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new favorite!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIc-J6-UDM">
-                                        <rect key="frame" x="0.0" y="352.66666666666669" width="375" height="24"/>
-                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
-                                        <color key="textColor" name="White"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please first  add a new favorite to your watch list." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXv-Ew-4vG">
+                                        <rect key="frame" x="43" y="165" width="193" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="193" id="59N-d9-R9r"/>
+                                            <constraint firstAttribute="height" constant="51" id="LRp-Mx-dL7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Empty-Favorite" translatesAutoresizingMaskIntoConstraints="NO" id="f08-D5-y2s">
+                                        <rect key="frame" x="39.666666666666686" y="15" width="200" height="84"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="GKb-DX-kM6"/>
+                                            <constraint firstAttribute="height" constant="84" id="SKs-Uv-oM2"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No favorite yet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cS-YI-M5k">
+                                        <rect key="frame" x="60.666666666666671" y="117" width="157.66666666666663" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Pe6-wQ-9u5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" name="MainColor"/>
                                 <constraints>
-                                    <constraint firstItem="WIc-J6-UDM" firstAttribute="centerX" secondItem="5lJ-9h-Hln" secondAttribute="centerX" id="13L-CX-XEz"/>
-                                    <constraint firstItem="WIc-J6-UDM" firstAttribute="centerY" secondItem="5lJ-9h-Hln" secondAttribute="centerY" id="Awe-xn-E4n"/>
-                                    <constraint firstItem="WIc-J6-UDM" firstAttribute="leading" secondItem="5lJ-9h-Hln" secondAttribute="leading" id="z9v-Ob-zaz"/>
+                                    <constraint firstItem="oXv-Ew-4vG" firstAttribute="centerX" secondItem="5lJ-9h-Hln" secondAttribute="centerX" id="44O-YW-r2h"/>
+                                    <constraint firstItem="f08-D5-y2s" firstAttribute="centerX" secondItem="5lJ-9h-Hln" secondAttribute="centerX" id="7rB-bI-at1"/>
+                                    <constraint firstItem="5cS-YI-M5k" firstAttribute="top" secondItem="f08-D5-y2s" secondAttribute="bottom" constant="18" id="AH7-cZ-Lyt"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oXv-Ew-4vG" secondAttribute="bottom" constant="8" id="Cre-aV-9Mi"/>
+                                    <constraint firstItem="5cS-YI-M5k" firstAttribute="centerX" secondItem="5lJ-9h-Hln" secondAttribute="centerX" id="DJJ-d0-0Xj"/>
+                                    <constraint firstItem="f08-D5-y2s" firstAttribute="top" secondItem="5lJ-9h-Hln" secondAttribute="top" constant="15" id="Rlc-JN-R77"/>
+                                    <constraint firstItem="oXv-Ew-4vG" firstAttribute="top" secondItem="5cS-YI-M5k" secondAttribute="bottom" constant="8" symbolic="YES" id="Zvg-i6-35l"/>
+                                    <constraint firstAttribute="width" constant="279" id="gv5-Tw-L09"/>
+                                    <constraint firstAttribute="height" constant="247" id="qqd-jX-zaO"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -43,17 +69,16 @@
                         <color key="backgroundColor" name="MainColor"/>
                         <constraints>
                             <constraint firstItem="oQY-1Z-sbO" firstAttribute="leading" secondItem="Oh0-5b-mNV" secondAttribute="leading" id="24q-v8-NUG"/>
-                            <constraint firstItem="5lJ-9h-Hln" firstAttribute="leading" secondItem="Oh0-5b-mNV" secondAttribute="leading" id="3f5-o9-niY"/>
-                            <constraint firstItem="5lJ-9h-Hln" firstAttribute="top" secondItem="wlx-LH-dSt" secondAttribute="top" id="5qV-lL-R09"/>
-                            <constraint firstItem="Oh0-5b-mNV" firstAttribute="bottom" secondItem="5lJ-9h-Hln" secondAttribute="bottom" id="NHc-hM-M9b"/>
-                            <constraint firstItem="Oh0-5b-mNV" firstAttribute="trailing" secondItem="5lJ-9h-Hln" secondAttribute="trailing" id="NYe-V1-DTn"/>
                             <constraint firstItem="Oh0-5b-mNV" firstAttribute="trailing" secondItem="oQY-1Z-sbO" secondAttribute="trailing" id="bJf-7p-EDD"/>
                             <constraint firstItem="Oh0-5b-mNV" firstAttribute="bottom" secondItem="oQY-1Z-sbO" secondAttribute="bottom" id="dsZ-Kh-mgW"/>
                             <constraint firstItem="oQY-1Z-sbO" firstAttribute="top" secondItem="wlx-LH-dSt" secondAttribute="top" id="iV6-36-vII"/>
+                            <constraint firstItem="5lJ-9h-Hln" firstAttribute="centerX" secondItem="wlx-LH-dSt" secondAttribute="centerX" id="qJT-SJ-LkQ"/>
+                            <constraint firstItem="5lJ-9h-Hln" firstAttribute="centerY" secondItem="wlx-LH-dSt" secondAttribute="centerY" id="t1F-ok-hwn"/>
                         </constraints>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="backgroundEmptyView" destination="5lJ-9h-Hln" id="1Fx-Lr-k4G"/>
                         <outlet property="backgroundView" destination="5lJ-9h-Hln" id="LXO-nI-BZ9"/>
                         <outlet property="tableViewFavorite" destination="oQY-1Z-sbO" id="f11-gJ-HlF"/>
                     </connections>
@@ -64,11 +89,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Empty-Favorite" width="495" height="728"/>
         <namedColor name="MainColor">
             <color red="0.10588235294117647" green="0.16470588235294117" blue="0.28627450980392155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="White">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

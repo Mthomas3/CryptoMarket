@@ -23,6 +23,7 @@ class MarketFavoritesViewController: UIViewController {
     //MARK: Outlets
     @IBOutlet private weak var tableViewFavorite: UITableView!
     @IBOutlet private weak var backgroundView: UIView!
+    @IBOutlet private weak var backgroundEmptyView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,9 @@ class MarketFavoritesViewController: UIViewController {
         self.tableViewSpinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         self.tableViewSpinner.isHidden = false
         self.tableViewSpinner.startAnimating()
+        
+        self.backgroundEmptyView.backgroundColor = UIColor.init(named: "SoftWhite")?.withAlphaComponent(0.075)
+        self.backgroundEmptyView.layer.cornerRadius = 18
     }
     
     private func setupTableView() {
