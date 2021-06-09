@@ -2,7 +2,7 @@
 
 ### 🧐 Overview
 
-<img src="ReadMeAssets/News.png" height="268" width="150"> <img src="ReadMeAssets/News1.png" height="268" width="150"> <img src="ReadMeAssets/Market.png" height="268" width="150"><img src="ReadMeAssets/Market1.png" height="268" width="150"><img src="ReadMeAssets/Market2.png" height="268" width="150"> <img src="ReadMeAssets/Market3.png" height="268" width="150">  <img src="ReadMeAssets/Favorite.png" height="268" width="150"> <img src="ReadMeAssets/Favoris1.png" height="268" width="150">
+<img src="ReadMeAssets/MarketNewsImage.png" height="268" width="150"> <img src="ReadMeAssets/News1.png" height="268" width="150"> <img src="ReadMeAssets/Market.png" height="268" width="150"><img src="ReadMeAssets/Market1.png" height="268" width="150"><img src="ReadMeAssets/Market2.png" height="268" width="150"> <img src="ReadMeAssets/Market3.png" height="268" width="150">  <img src="ReadMeAssets/Favorite.png" height="268" width="150"> <img src="ReadMeAssets/Favoris1.png" height="268" width="150">
 
 
 CryptoMarket is an app to see the current Market of cryptocurrencies 📊.
