@@ -2,7 +2,7 @@
 
 ### 🧐 Overview
 
-<img src="ReadMeAssets/MarketNews.png" height="282" width="150"> <img src="ReadMeAssets/NewsView.png" height="282" width="150"> <img src="ReadMeAssets/MarketView.png" height="282" width="150"><img src="ReadMeAssets/Market.png" height="282" width="150"><img src="ReadMeAssets/SentimentHistory.png" height="282" width="150"> <img src="ReadMeAssets/Fear&Greed.png" height="282" width="150">  <img src="ReadMeAssets/Portfolio.png" height="282" width="150"> <img src="ReadMeAssets/EmptyPortfolio.png" height="282" width="150"> <img src="ReadMeAssets/Favorite.png" height="282" width="150"> <img src="ReadMeAssets/EmptyFavorite.png" height="282" width="150">
+<img src="ReadMeAssets/MarketNews.png" height="300" width="150"> <img src="ReadMeAssets/NewsView.png" height="300" width="150"> <img src="ReadMeAssets/MarketView.png" height="300" width="150"><img src="ReadMeAssets/Market.png" height="300" width="150"><img src="ReadMeAssets/SentimentHistory.png" height="300" width="150"> <img src="ReadMeAssets/Fear&Greed.png" height="300" width="150">  <img src="ReadMeAssets/Portfolio.png" height="300" width="150"> <img src="ReadMeAssets/EmptyPortfolio.png" height="300" width="150"> <img src="ReadMeAssets/Favorite.png" height="300" width="150"> <img src="ReadMeAssets/EmptyFavorite.png" height="300" width="150">
 
 
 CryptoMarket is an app to see the current Market of cryptocurrencies 📊.
