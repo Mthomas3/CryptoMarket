@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1018092928421-76r304q5q2lo0nn2trar7qrvu9ekllkt.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1018092928421-76r304q5q2lo0nn2trar7qrvu9ekllkt</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB1KCqCaetHM94Pc1v0ppTXNouftKQPRZg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1018092928421</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mthomas3.cryptomarket</string>
+	<key>PROJECT_ID</key>
+	<string>cryptomarket-6c0ce</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cryptomarket-6c0ce.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1018092928421:ios:a76c71edd2e5f497f77c4c</string>
+</dict>
+</plist>

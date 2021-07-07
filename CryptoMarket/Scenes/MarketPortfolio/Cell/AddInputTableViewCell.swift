@@ -62,12 +62,25 @@ class AddInputTableViewCell: UITableViewCell {
         self.moneyButton.isHidden = isCrypto
     }
     
+    private func parseFromDouble(with value: String) -> Double {
+        if Double(value) == nil {
+            let formatter = NumberFormatter()
+            formatter.decimalSeparator = ","
+            
+            let grade = formatter.number(from: value)
+            return grade?.doubleValue ?? 0.0
+        } else {
+            return Double(value) ?? 0.0
+        }
+    }
+    
     private func setupViewModel() {
         let input = AddInputViewModel.Input(onSelectCrypto: self.onSelectCrypto.asObservable(),
                                             onSelectMonyey: self.onSelectMoney.asObservable(),
                                             moneyAmount: self.amountInput.rx.controlEvent([.editingChanged])
                                                 .map {
-                                                    return (self.rowSelected ?? 0, Double(self.amountInput.text ?? "0") ?? 0)}.asObservable() )
+                                                    return (self.rowSelected ?? 0, self.parseFromDouble(with: self.amountInput.text ?? "0"))
+                                                    }.asObservable() )
         let output = self.viewModel?.transform(input: input)
         
         output?.updateCellsValue
