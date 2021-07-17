@@ -9,6 +9,8 @@
 import Foundation
 import RxCocoa
 import RxSwift
+import Firebase
+import FirebaseFirestoreSwift
 
 internal class AddPortfolioViewModel: ViewModelType {
     
@@ -123,6 +125,19 @@ internal class AddPortfolioViewModel: ViewModelType {
                                                         .concat(string: ".png"))))
         return downloadImageResult.imageDownloaded
     }
+    
+    private func savePortfolioValueOnCloud(with portfolio: Portfolio) {
+//        FirebaseApp.configure()
+//        let db = Firestore.firestore()
+//        
+//        let newDocument = db.collection("Portfolio").document()
+//        newDocument.setData(["amount": "10",
+//                             "boughtPrice": "20",
+//                             "coin": "bitcoin",
+//                             "percentage": "2.0",
+//                             "total": "100"])
+            
+    }
 
     private func createNewPortfolio() -> Observable<(Portfolio, UIImage?)> {
         
@@ -145,6 +160,8 @@ internal class AddPortfolioViewModel: ViewModelType {
                                marketRank: cryptoItem.0.rank ?? "",
                                id: cryptoItem.0.id ?? "")
         
+        self.savePortfolioValueOnCloud(with: create)
+        
         return Observable.combineLatest(CoreDataManager.sharedInstance.create(with: create),
                                         self.downloadImage(with: cryptoItem.0.id ?? ""))
     }
@@ -158,7 +175,7 @@ internal class AddPortfolioViewModel: ViewModelType {
             return $0.values.map { $0 > 0.0 }.filter { $0 == false }.count == 0 && $0.count > 3
         }
         
-        let doneTrigger = Observable.combineLatest(input.doneEvent, self.onCellValue).map { return $0.1.count > 3}
+        let doneTrigger = Observable.combineLatest(input.doneEvent, self.onCellValue).map { return $0.1.count > 3 }
         
         let resultFormValidation = Observable.merge(cellResultsValues, doneTrigger)
         

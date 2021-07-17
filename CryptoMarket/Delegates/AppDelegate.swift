@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import Firebase
 import FirebaseAuth
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             guard let user = authResult?.user else { return }
             self.userUid = user.uid
         }
+        
+        let db = Firestore.firestore()
+        
+        let newDocument = db.collection("Test").document()
+        newDocument.setData(["amount": "10",
+                             "boughtPrice": "20",
+                             "coin": "bitcoin",
+                             "percentage": "2.0",
+                             "total": "100"])
+    
+        
         return true
     }
 
