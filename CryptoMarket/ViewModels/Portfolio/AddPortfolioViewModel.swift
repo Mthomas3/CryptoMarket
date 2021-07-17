@@ -10,7 +10,7 @@ import Foundation
 import RxCocoa
 import RxSwift
 import Firebase
-import FirebaseFirestoreSwift
+import FirebaseFirestore
 
 internal class AddPortfolioViewModel: ViewModelType {
     
@@ -127,15 +127,17 @@ internal class AddPortfolioViewModel: ViewModelType {
     }
     
     private func savePortfolioValueOnCloud(with portfolio: Portfolio) {
-//        FirebaseApp.configure()
-//        let db = Firestore.firestore()
-//        
-//        let newDocument = db.collection("Portfolio").document()
-//        newDocument.setData(["amount": "10",
-//                             "boughtPrice": "20",
-//                             "coin": "bitcoin",
-//                             "percentage": "2.0",
-//                             "total": "100"])
+        let db = Firestore.firestore()
+        
+        
+        
+        let newDocument = db.collection("/Portfolio").document()
+        
+        newDocument.setData(["amount": "10",
+                             "boughtPrice": "20",
+                             "coin": "bitcoin",
+                             "percentage": "2.0",
+                             "total": "100"])
             
     }
 

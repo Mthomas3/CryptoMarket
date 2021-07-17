@@ -21,11 +21,9 @@ target 'CryptoMarket' do
    pod 'Firebase/Analytics'
    pod 'Firebase/Crashlytics'
    pod 'Firebase/Auth'
-   pod 'Firebase/Performance'
    pod 'Firebase/Firestore'
-   pod 'FirebaseFirestoreSwift'
-   pod 'Firebase/Functions'
-   pod 'Firebase/Storage'
+
+
 
    plugin 'cocoapods-keys', {
    	  :project => "CryptoMarket",
