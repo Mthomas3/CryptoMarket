@@ -127,18 +127,17 @@ internal class AddPortfolioViewModel: ViewModelType {
     }
     
     private func savePortfolioValueOnCloud(with portfolio: Portfolio) {
-        let db = Firestore.firestore()
         
-        
-        
-        let newDocument = db.collection("/Portfolio").document()
-        
-        newDocument.setData(["amount": "10",
-                             "boughtPrice": "20",
-                             "coin": "bitcoin",
-                             "percentage": "2.0",
-                             "total": "100"])
-            
+        if let app = UIApplication.shared.delegate as? AppDelegate, let user = app.userUid {
+            let db = Firestore.firestore()
+            let newDocument = db.collection("/Portfolio").document()
+            newDocument.setData(["amount": portfolio.amount,
+                                 "boughtPrice": portfolio.price,
+                                 "coin": portfolio.marketName,
+                                 "fee": portfolio.fee,
+                                 "total": portfolio.total,
+                                 "user": user])
+        }
     }
 
     private func createNewPortfolio() -> Observable<(Portfolio, UIImage?)> {

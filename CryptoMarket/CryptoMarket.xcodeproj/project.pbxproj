@@ -563,7 +563,6 @@
 				9F3E0BF008702225EB2BCF14 /* Pods-CryptoMarketUITests.debug.xcconfig */,
 				C240C2AEB65F99DBCA6F4CFD /* Pods-CryptoMarketUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -1221,7 +1220,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 7F4ML7J3E2;
 				INFOPLIST_FILE = CryptoMarket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1242,7 +1241,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 7F4ML7J3E2;
 				INFOPLIST_FILE = CryptoMarket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
