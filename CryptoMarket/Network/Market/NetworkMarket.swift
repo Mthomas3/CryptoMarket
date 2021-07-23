@@ -17,9 +17,9 @@ internal final class NetworkMarket {
     public init() { }
     
     public func getMarket(stringUrl url: String) -> Observable<[Market]> {
-        
+        let finalUrl = url.removeWhitespace().lowercased()
         return RxAlamofire
-            .json(.get, url)
+            .json(.get, finalUrl)
             .retry(2)
             .observeOn(MainScheduler.asyncInstance)
             .map({ json -> [Market] in
@@ -28,7 +28,7 @@ internal final class NetworkMarket {
     }
     
     public func getMarket(stringUrl url: String, with name: String) -> Observable<Market> {
-        let finalUrl = url + "/" + name.lowercased()
+        let finalUrl = url + "/" + name.removeWhitespace().lowercased()
         return RxAlamofire
             .json(.get, finalUrl)
             .retry(2)

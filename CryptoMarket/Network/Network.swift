@@ -41,8 +41,9 @@ internal final class Network {
     }
     
     public func performGetRequestImage(imageUrl url: String) -> Observable<UIImage?> {
+            let newUrl = url.removeWhitespace().lowercased()
             return RxAlamofire
-            .requestData(.get, url)
+            .requestData(.get, newUrl)
             .map({ (response,data) -> UIImage? in
                 return UIImage(data: data)
             })
