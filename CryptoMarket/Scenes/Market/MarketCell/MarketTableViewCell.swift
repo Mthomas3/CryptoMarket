@@ -95,8 +95,12 @@ class MarketTableViewCell: UITableViewCell {
     
     public func loadImageOnCell(name: String) {
                 
+        ///MARK: old way to get picture from a github repo 
+        /*let input = MarketCellViewModel.Input(imageName:
+            Driver.just(ApiRoute.ROUTE_IMAGE.concat(string: name).concat(string: ".png")))*/
+        
         let input = MarketCellViewModel.Input(imageName:
-            Driver.just(ApiRoute.ROUTE_IMAGE.concat(string: name).concat(string: ".png")))
+            Driver.just(ApiRoute.ROUTE_IMAGE.concat(string: name)))
         
         let output = self.viewModel.transform(input: input)
         

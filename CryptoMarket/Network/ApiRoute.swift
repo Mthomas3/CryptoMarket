@@ -13,7 +13,8 @@ public enum ApiRoute {
         
     public static let ROUTE_SERVER_MARKET = "https://api.coincap.io/v2/"
     public static let ROUTE_MARKET = "assets"
-    public static let ROUTE_IMAGE = "https://cryptologos.cc/logos/thumbs/"
+    //public static let ROUTE_IMAGE = "https://cryptologos.cc/logos/thumbs/"
+    public static let ROUTE_IMAGE = "https://cryptoicon-api.vercel.app/api/icon/"
     public static let ROUTE_HISTORY = "assets/"
     
     public static let ROUTE_SERVER_NEWS = "https://newsapi.org/v2/everything?q="

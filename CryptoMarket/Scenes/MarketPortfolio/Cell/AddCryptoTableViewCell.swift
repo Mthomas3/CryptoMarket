@@ -67,8 +67,11 @@ class AddCryptoTableViewCell: UITableViewCell {
     }
     
     internal func loadImage(with name: String) {
+//        let input = MarketCellViewModel.Input(imageName:
+//            Driver.just(ApiRoute.ROUTE_IMAGE.concat(string: name).concat(string: ".png")))
         let input = MarketCellViewModel.Input(imageName:
-            Driver.just(ApiRoute.ROUTE_IMAGE.concat(string: name).concat(string: ".png")))
+            Driver.just(ApiRoute.ROUTE_IMAGE.concat(string: name)))
+
         
         let output = self.viewModel.transform(input: input)
         

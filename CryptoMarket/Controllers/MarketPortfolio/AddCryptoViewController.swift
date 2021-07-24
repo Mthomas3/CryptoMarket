@@ -126,7 +126,8 @@ extension AddCryptoViewController: UITableViewDelegate, UITableViewDataSource {
         if let cell = tableView.dequeueReusableCell(withIdentifier: AddCryptoTableViewCell.identifier, for: indexPath) as? AddCryptoTableViewCell {
             cell.name = self.tableViewDataSource[indexPath.row].name ?? ""
             cell.shortName = self.tableViewDataSource[indexPath.row].symbol ?? ""
-            cell.loadImage(with: self.tableViewDataSource[indexPath.row].id ?? "")
+            //cell.loadImage(with: self.tableViewDataSource[indexPath.row].id ?? "")
+            cell.loadImage(with: self.tableViewDataSource[indexPath.row].symbol?.lowercased() ?? "")
             if let vm = self.viewModel {
                 cell.setup(with: vm, market: self.tableViewDataSource[indexPath.row], row: indexPath.row)
             }

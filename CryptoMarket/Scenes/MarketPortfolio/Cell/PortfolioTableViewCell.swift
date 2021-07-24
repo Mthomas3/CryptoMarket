@@ -95,7 +95,8 @@ class PortfolioTableViewCell: UITableViewCell {
     }
     
     public func loadImageOnCell(name: String) {
-        let input = MarketCellViewModel.Input(imageName: Driver.just(ApiRoute.ROUTE_IMAGE.concat(string: name).concat(string: ".png")))
+//        let input = MarketCellViewModel.Input(imageName: Driver.just(ApiRoute.ROUTE_IMAGE.concat(string: name).concat(string: ".png")))
+        let input = MarketCellViewModel.Input(imageName: Driver.just(ApiRoute.ROUTE_IMAGE.concat(string: name)))
         let output = self.marketViewModel.transform(input: input)
         
         output.imageDownloaded.asObservable()

@@ -108,6 +108,7 @@ internal final class CoreDataManager {
                 fav.supply = market.supply
                 fav.vwap24Hr = market.vwap24Hr
                 fav.volumeUsd24Hr = market.volumeUsd24Hr
+                fav.symbol = market.symbol
                 do {
                     self.context.insert(fav)
                     try self.context.save()

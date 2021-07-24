@@ -121,8 +121,7 @@ internal class AddPortfolioViewModel: ViewModelType {
         let downloadImageResult = self.downloadViewModel
             .transform(input: MarketCellViewModel
                         .Input(imageName: Driver.just(ApiRoute
-                                                        .ROUTE_IMAGE.concat(string: name)
-                                                        .concat(string: ".png"))))
+                                                        .ROUTE_IMAGE.concat(string: name))))
         return downloadImageResult.imageDownloaded
     }
     
@@ -136,7 +135,8 @@ internal class AddPortfolioViewModel: ViewModelType {
                                  "coin": portfolio.marketName,
                                  "fee": portfolio.fee,
                                  "total": portfolio.total,
-                                 "user": user])
+                                 "user": user,
+                                 "dateCreated": Date()])
         }
     }
 
