@@ -40,7 +40,7 @@ class NewsTableViewCell: UITableViewCell {
     private func setupView() {
         self.placeholderView.isHidden = false
         self.placeholderView.layer.cornerRadius = 10
-        self.placeholderView.backgroundColor = UIColor.init(named: "Gray") ?? UIColor.black
+        self.placeholderView.backgroundColor = UIColor.init(named: "Gray")?.withAlphaComponent(0.3) ?? UIColor.black
         self.imageNews.layer.cornerRadius = 10
     }
     
@@ -67,16 +67,20 @@ class NewsTableViewCell: UITableViewCell {
         let output = self.viewModel.transform(input: input)
               
         self.viewModel.currentDownloadUrl = urlImage
-              
+        
         output.imageDownloaded.asObservable()
             .subscribeOn(MainScheduler.asyncInstance)
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { (imageView) in
-                guard let image = imageView else { return }
+            .subscribe(onNext: { imageView in
+                guard let image = imageView else {
+                    return self.imageNews.image = UIImage(named: "bitcoin-placeholder")
+                }
                 self.viewModel.saveImageOnCache(image: image, key: urlImage)
                 if self.viewModel.currentDownloadUrl == urlImage {
                     self.imageNews.image = image
                 }
+            }, onError: { error in
+                self.imageNews.image = UIImage(named: "bitcoin-placeholder")
             }).disposed(by: self.disposeBag)
               
         output.isImageLoading.asObservable()
