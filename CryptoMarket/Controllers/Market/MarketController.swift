@@ -160,7 +160,9 @@ extension MarketController: UITableViewDelegate, UITableViewDataSource {
 extension MarketController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if tabBarController.selectedIndex == currentPageSelect.Market.rawValue {
-            self.tableViewMarket.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            if self.tableViewDataSource.count > 1 {
+                self.tableViewMarket.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+            }
         }
     }
 }

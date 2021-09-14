@@ -236,7 +236,9 @@ extension MarketFavoritesViewController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if tabBarController.selectedIndex == currentPageSelect.Favorite.rawValue {
             if !self.tableViewFavorite.isHidden {
-                self.tableViewFavorite.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
+                if self.tableViewDataSource.count > 1 {
+                    self.tableViewFavorite.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
+                }
             }
         }
     }

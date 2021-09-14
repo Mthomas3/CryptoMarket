@@ -141,7 +141,9 @@ extension MarketNewsViewController: UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if tabBarController.selectedIndex == currentPageSelect.News.rawValue {
-            self.tableViewNews.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
+            if self.tableViewDataSource.count > 1 {
+                self.tableViewNews.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
+            }
         }
     }
 }
