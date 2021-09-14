@@ -92,21 +92,27 @@ class PortfolioViewController: UIViewController {
         output.portfolioDataSources.asObservable()
             .subscribeOn(MainScheduler.asyncInstance)
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { dataSource in
+            .subscribe(onNext: { (dataSource) in
                 self.tableViewDataSource = dataSource
                 self.refreshControl.endRefreshing()
                 self.tableViewPortfolio.reloadData()
                 self.updateBackgroundView()
-            }, onError: { error in
-                print("AN ERROR OCCURED = \(error)")
-            }).disposed(by: self.disposeBag)
-            
+            }, onError: { (error) in
+                self.handleErrorOnRetry(error: error, message: ErrorMessage.errorMessagePortfolio) {
+                    self.setupViewModel()
+                }
+            }, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
+
         output.portfolioOnChange.asObservable()
             .subscribeOn(MainScheduler.asyncInstance)
             .observeOn(MainScheduler.instance)
-            .subscribe (onNext: { (element) in
+            .subscribe(onNext: { (element) in
                 self.tableView(new: element)
-            }).disposed(by: self.disposeBag)
+            }, onError: { (error) in
+                self.handleErrorOnRetry(error: error, message: ErrorMessage.errorMessagePortfolio) {
+                    self.setupViewModel()
+                }
+            }, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
         
         output.isLoading.asObservable()
             .observeOn(MainScheduler.instance)
@@ -114,15 +120,22 @@ class PortfolioViewController: UIViewController {
                 self.tableViewPortfolio.isHidden = isLoading
                 self.tableViewSpinner.isHidden = !isLoading
                 isLoading ? self.tableViewSpinner.startAnimating() : self.tableViewSpinner.stopAnimating()
-                
-            }).disposed(by: self.disposeBag)
+            }, onError: { (error) in
+                self.handleErrorOnRetry(error: error, message: ErrorMessage.errorMessagePortfolio) {
+                    self.setupViewModel()
+                }
+            }, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
         
         output.portfolioCurrentValue.asObservable()
             .subscribeOn(MainScheduler.asyncInstance)
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { portfolioValue in
+            .subscribe(onNext: { (portfolioValue) in
                 self.navigationItem.title = "\(portfolioValue)".currencyFormatting(formatterDigit: 2)
-            }).disposed(by: self.disposeBag)
+            }, onError: { (error) in
+                self.handleErrorOnRetry(error: error, message: ErrorMessage.errorMessagePortfolio) {
+                    self.setupViewModel()
+                }
+            }, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
     }
 }
 

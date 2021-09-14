@@ -130,7 +130,11 @@ class MarketFavoritesViewController: UIViewController {
                 self.tableViewDataSource = favorite
                 self.tableViewFavorite.reloadData()
                 self.displayHelpBackground(isHidden: favorite.count > 0 ? false : true)
-        }).disposed(by: self.disposeBag)
+            }, onError: { (error) in
+                self.handleErrorOnRetry(error: error, message: ErrorMessage.errorMessageFavorite) {
+                    self.setupViewModel()
+                }
+            }, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
         
         output.favoriteOnChange.asObservable()
             .subscribeOn(MainScheduler.asyncInstance)
@@ -138,7 +142,11 @@ class MarketFavoritesViewController: UIViewController {
             .subscribe(onNext: { (element) in
                 self.tableView(addNewElement: element)
                 self.displayHelpBackground(isHidden: false)
-            }).disposed(by: self.disposeBag)
+            }, onError: { (error) in
+                self.handleErrorOnRetry(error: error, message: ErrorMessage.errorMessageFavorite) {
+                    self.setupViewModel()
+                }
+            }, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
         
         output.isLoading.asObservable()
             .subscribeOn(MainScheduler.asyncInstance)
@@ -147,8 +155,12 @@ class MarketFavoritesViewController: UIViewController {
                 self.tableViewFavorite.isHidden = isLoading
                 self.tableViewSpinner.isHidden = !isLoading
                 isLoading ? self.tableViewSpinner.startAnimating() : self.tableViewSpinner.stopAnimating()
+            }, onError: { (error) in
+                self.handleErrorOnRetry(error: error, message: ErrorMessage.errorMessageFavorite) {
+                    self.setupViewModel()
+                }
+            }, onCompleted: nil, onDisposed: nil).disposed(by: self.disposeBag)
                 
-            }).disposed(by: self.disposeBag)
     }
 }
 

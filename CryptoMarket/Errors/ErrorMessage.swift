@@ -18,4 +18,8 @@ public enum ErrorMessage {
     public static let errorMessageNews = "Unable to fetch the neccesary data to load the News. Please try again"
     
     public static let errorMessageMarket = "Unable to fetch the neccesary data to load the current Market. Please try again"
+    
+    public static let errorMessageFavorite = "Unable to fetch the neccesary data to load the current Favorite. Please try again"
+    
+    public static let errorMessagePortfolio = "Unable to fetch the neccesary data to load the current Portfolio. Please try again"
 }
