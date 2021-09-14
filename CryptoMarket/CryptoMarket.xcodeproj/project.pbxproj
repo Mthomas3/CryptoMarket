@@ -102,6 +102,7 @@
 		E9C29A9026395D72000CCE48 /* PortfolioEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C29A8F26395D72000CCE48 /* PortfolioEntity.swift */; };
 		E9D57025232A52AC009A5031 /* ApiRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D57024232A52AC009A5031 /* ApiRoute.swift */; };
 		E9D5702A232A6502009A5031 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D57029232A6502009A5031 /* String+Ext.swift */; };
+		E9DC344426F12EB7006859F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC344326F12EB7006859F6 /* Constants.swift */; };
 		E9E386E3266B86E600585750 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9E386E2266B86E600585750 /* GoogleService-Info.plist */; };
 		E9EFBDC9232BAAEA007EDE63 /* MarketEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EFBDC8232BAAEA007EDE63 /* MarketEntity.swift */; };
 		E9F35200263A13F10040981C /* AddPortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F351FF263A13F10040981C /* AddPortfolioViewController.swift */; };
@@ -231,6 +232,7 @@
 		E9C29A8F26395D72000CCE48 /* PortfolioEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioEntity.swift; sourceTree = "<group>"; };
 		E9D57024232A52AC009A5031 /* ApiRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRoute.swift; sourceTree = "<group>"; };
 		E9D57029232A6502009A5031 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		E9DC344326F12EB7006859F6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E9E386E2266B86E600585750 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E9EFBDC8232BAAEA007EDE63 /* MarketEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketEntity.swift; sourceTree = "<group>"; };
 		E9F351FF263A13F10040981C /* AddPortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPortfolioViewController.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 		1E51B00923219CC10087E38C = {
 			isa = PBXGroup;
 			children = (
+				E9DC344226F12EAC006859F6 /* Constants */,
 				1E51A9A32420232B00681318 /* Animations */,
 				1EC5C643237F431300EFCA40 /* Errors */,
 				1EE73D8E2321A51900D83B82 /* Protocols */,
@@ -721,6 +724,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E9DC344226F12EAC006859F6 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				E9DC344326F12EB7006859F6 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		E9F351FC263A0F650040981C /* CellViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1005,6 +1016,7 @@
 				E986E5E323312A09001AAD12 /* UIImageView+Ext.swift in Sources */,
 				E9D5702A232A6502009A5031 /* String+Ext.swift in Sources */,
 				1E482EA72388B39E00C05DA8 /* MarketInformationViewModel.swift in Sources */,
+				E9DC344426F12EB7006859F6 /* Constants.swift in Sources */,
 				E93AB6D8263FD8580080F8CD /* AddCryptoTableViewCell.swift in Sources */,
 				1EBF8A182336AF3300E79306 /* MarketFavoritesViewController.swift in Sources */,
 				E9B3D122263AFFB400830D1F /* AddPortfolioViewModel.swift in Sources */,
@@ -1227,7 +1239,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.6;
+				MARKETING_VERSION = 2.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mthomas3.CryptoMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1248,7 +1260,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.6;
+				MARKETING_VERSION = 2.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mthomas3.CryptoMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

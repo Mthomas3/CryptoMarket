@@ -26,6 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.userUid = user.uid
         }
         
+        if let val = UserDefaults.standard.string(forKey: Constants.reviewKey.rawValue) {
+            if (Int(val) ?? 0) < 100 {
+                UserDefaults.standard.set("\((Int(val) ?? 0) + 1)", forKey: Constants.reviewKey.rawValue)
+            }
+        } else {
+            UserDefaults.standard.set("0", forKey: Constants.reviewKey.rawValue)
+        }
+        
         return true
     }
 

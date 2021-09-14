@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import SafariServices
+import StoreKit
 
 class MarketNewsViewController: UIViewController {
     
@@ -27,6 +28,7 @@ class MarketNewsViewController: UIViewController {
         
         self.setupView()
         self.setupViewModel()
+        self.handleReviewOnApp()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -135,6 +137,19 @@ extension MarketNewsViewController: UITableViewDataSource, UITableViewDelegate {
             self.present(vc, animated: true)
         }
     }
+}
+
+extension MarketNewsViewController {
+    
+    func handleReviewOnApp() {
+        if let val = UserDefaults.standard.string(forKey: Constants.reviewKey.rawValue) {
+            if (Int(val) ?? 0) == 1 || (Int(val) ?? 0) == 10  || (Int(val) ?? 0) == 100 {
+                SKStoreReviewController.requestReview()
+            }
+            print("****** VAL = \(val)")
+        }
+    }
+    
 }
 
 extension MarketNewsViewController: UITabBarControllerDelegate {
