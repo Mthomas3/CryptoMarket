@@ -30,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let pushManager = PushNotificationManager(userID: self.userUid ?? "")
             pushManager.registerForPushNotifications()
+            
+            
+            
         }
         
         return true
@@ -112,10 +115,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 class PushNotificationManager: NSObject, MessagingDelegate, UNUserNotificationCenterDelegate {
     let userID: String
+    
     init(userID: String) {
         self.userID = userID
         super.init()
     }
+    
     func registerForPushNotifications() {
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
@@ -134,7 +139,9 @@ class PushNotificationManager: NSObject, MessagingDelegate, UNUserNotificationCe
         UIApplication.shared.registerForRemoteNotifications()
         updateFirestorePushTokenIfNeeded()
     }
+    
     func updateFirestorePushTokenIfNeeded() {
+        print("SHOWING TOKEN ¨¨¨¨¨ \(Messaging.messaging().fcmToken)")
         if let token = Messaging.messaging().fcmToken {
             let usersRef = Firestore.firestore().collection("users_table").document(userID)
             usersRef.setData(["fcmToken": token], merge: true)
