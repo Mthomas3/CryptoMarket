@@ -22,6 +22,8 @@ target 'CryptoMarket' do
    pod 'Firebase/Crashlytics'
    pod 'Firebase/Auth'
    pod 'Firebase/Firestore'
+   pod 'Firebase/Core'
+   pod 'Firebase/Messaging'
 
 
 

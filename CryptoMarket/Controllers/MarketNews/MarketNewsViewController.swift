@@ -28,13 +28,13 @@ class MarketNewsViewController: UIViewController {
         
         self.setupView()
         self.setupViewModel()
-        self.handleReviewOnApp()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.tabBarController?.delegate = self
+        self.handleReviewOnApp()
     }
     
     private func setupView() {
@@ -104,10 +104,10 @@ extension MarketNewsViewController: UITableViewDataSource, UITableViewDelegate {
         if let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.identifier, for: indexPath) as? NewsTableViewCell {
             cell.title = self.tableViewDataSource[indexPath.row].title
             
-            let author = self.tableViewDataSource[indexPath.row].author ?? ""
+            let author = self.tableViewDataSource[indexPath.row].author ?? "Unknown Author"
             let publishedDate = self.tableViewDataSource[indexPath.row].publishedAt?.formatToDate() ?? ""
             
-            cell.date = publishedDate.concat(string: " \u{2022} ").concat(string: author)
+            cell.date = publishedDate.concat(string: " \u{2022} ").concat(string: author == "" ? "Unknown Author" : author)
             
             cell.loadImageOnCell(urlImage: self.tableViewDataSource[indexPath.row].urlToImage)
             cell.separatorInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
@@ -140,16 +140,18 @@ extension MarketNewsViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension MarketNewsViewController {
-    
     func handleReviewOnApp() {
         if let val = UserDefaults.standard.string(forKey: Constants.reviewKey.rawValue) {
             if (Int(val) ?? 0) == 1 || (Int(val) ?? 0) == 10  || (Int(val) ?? 0) == 100 {
                 SKStoreReviewController.requestReview()
+                UserDefaults.standard.set("\((Int(val) ?? 0) + 1)", forKey: Constants.reviewKey.rawValue)
+            } else if (Int(val) ?? 0) < 100 {
+                UserDefaults.standard.set("\((Int(val) ?? 0) + 1)", forKey: Constants.reviewKey.rawValue)
             }
-            print("****** VAL = \(val)")
+        } else {
+            UserDefaults.standard.set("1", forKey: Constants.reviewKey.rawValue)
         }
     }
-    
 }
 
 extension MarketNewsViewController: UITabBarControllerDelegate {

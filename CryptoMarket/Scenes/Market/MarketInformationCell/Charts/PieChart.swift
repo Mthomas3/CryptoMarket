@@ -61,10 +61,10 @@ final class PieChart: UIView {
         self.pieChartView.maxAngle = 180
         self.pieChartView.rotationAngle = 180
         self.pieChartView.centerTextOffset = CGPoint(x: 0, y: -20)
-        self.pieChartView.extraBottomOffset = -350
-        self.pieChartView.extraTopOffset = 150
-        self.pieChartView.extraLeftOffset = -60
-        self.pieChartView.extraRightOffset = -60
+        self.pieChartView.extraBottomOffset = 0
+        self.pieChartView.extraTopOffset = 0
+        self.pieChartView.extraLeftOffset = 50
+        self.pieChartView.extraRightOffset = 50
         self.pieChartView.chartDescription?.textColor = .white
         self.pieChartView.chartDescription?.font = UIFont(name:"HelveticaNeue-Light", size:12)!
 
