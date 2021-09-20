@@ -103,7 +103,7 @@
 		E9D57025232A52AC009A5031 /* ApiRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D57024232A52AC009A5031 /* ApiRoute.swift */; };
 		E9D5702A232A6502009A5031 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D57029232A6502009A5031 /* String+Ext.swift */; };
 		E9DC344426F12EB7006859F6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DC344326F12EB7006859F6 /* Constants.swift */; };
-		E9E386E3266B86E600585750 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9E386E2266B86E600585750 /* GoogleService-Info.plist */; };
+		E9E794B326F881540040F5CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9E794B226F881540040F5CD /* GoogleService-Info.plist */; };
 		E9EFBDC9232BAAEA007EDE63 /* MarketEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EFBDC8232BAAEA007EDE63 /* MarketEntity.swift */; };
 		E9F35200263A13F10040981C /* AddPortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F351FF263A13F10040981C /* AddPortfolioViewController.swift */; };
 /* End PBXBuildFile section */
@@ -235,7 +235,7 @@
 		E9D57024232A52AC009A5031 /* ApiRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRoute.swift; sourceTree = "<group>"; };
 		E9D57029232A6502009A5031 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		E9DC344326F12EB7006859F6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		E9E386E2266B86E600585750 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E9E794B226F881540040F5CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E9EFBDC8232BAAEA007EDE63 /* MarketEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketEntity.swift; sourceTree = "<group>"; };
 		E9F351FF263A13F10040981C /* AddPortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPortfolioViewController.swift; sourceTree = "<group>"; };
 		F0DF320B815BEA0E04284232 /* Pods-CryptoMarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMarket.release.xcconfig"; path = "Target Support Files/Pods-CryptoMarket/Pods-CryptoMarket.release.xcconfig"; sourceTree = "<group>"; };
@@ -365,7 +365,7 @@
 			children = (
 				E9C3EB9526F4C79500753679 /* CryptoMarketDebug.entitlements */,
 				E9C3EB9426F4C77A00753679 /* CryptoMarketRelease.entitlements */,
-				E9E386E2266B86E600585750 /* GoogleService-Info.plist */,
+				E9E794B226F881540040F5CD /* GoogleService-Info.plist */,
 				1E4A56AD232D2DC900B4BF0A /* Font */,
 				1E51B01C23219CC20087E38C /* Assets.xcassets */,
 				1E51B01E23219CC20087E38C /* LaunchScreen.storyboard */,
@@ -857,8 +857,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E51B02023219CC20087E38C /* LaunchScreen.storyboard in Resources */,
+				E9E794B326F881540040F5CD /* GoogleService-Info.plist in Resources */,
 				E93AB6D3263FCE3D0080F8CD /* AddDateTableViewCell.xib in Resources */,
-				E9E386E3266B86E600585750 /* GoogleService-Info.plist in Resources */,
 				E96124CB26414D2A0033F0A7 /* MoneyTableViewCell.xib in Resources */,
 				1E51B01D23219CC20087E38C /* Assets.xcassets in Resources */,
 				1E51B01B23219CC10087E38C /* Main.storyboard in Resources */,
@@ -1236,6 +1236,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CryptoMarket/CryptoMarketDebug.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 7F4ML7J3E2;
@@ -1247,6 +1248,7 @@
 				MARKETING_VERSION = 2.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mthomas3.CryptoMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1258,6 +1260,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CryptoMarket/CryptoMarketRelease.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 7F4ML7J3E2;
@@ -1269,6 +1272,7 @@
 				MARKETING_VERSION = 2.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mthomas3.CryptoMarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

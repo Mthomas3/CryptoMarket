@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1018092928421-76r304q5q2lo0nn2trar7qrvu9ekllkt.apps.googleusercontent.com</string>
+	<string>1018092928421-n4gvd8ct8nveq0s7b63rjcs3emnn2dtt.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1018092928421-76r304q5q2lo0nn2trar7qrvu9ekllkt</string>
+	<string>com.googleusercontent.apps.1018092928421-n4gvd8ct8nveq0s7b63rjcs3emnn2dtt</string>
 	<key>API_KEY</key>
 	<string>AIzaSyB1KCqCaetHM94Pc1v0ppTXNouftKQPRZg</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mthomas3.cryptomarket</string>
+	<string>com.mthomas3.CryptoMarket</string>
 	<key>PROJECT_ID</key>
 	<string>cryptomarket-6c0ce</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1018092928421:ios:a76c71edd2e5f497f77c4c</string>
+	<string>1:1018092928421:ios:83f0bd5e9b74cd54f77c4c</string>
+	<key>DATABASE_URL</key>
+	<string>https://cryptomarket-6c0ce-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>
